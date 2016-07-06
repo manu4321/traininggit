@@ -1,0 +1,18 @@
+//define the module. Helps with organization
+//defined in the HTML.
+var app4 = angular.module('app4', []);
+
+//factory functions.
+//Scope is a dependency. it tells angular to pass us a scope. Dependency injection
+app4.controller('eventCtrl', function($scope){
+
+	$scope.groceries = [
+		{item: "Tomatoes", purchased: false},
+		{item: "Potatoes", purchased: false},
+		{item: "Bread", purchased: false},
+		{item: "Hummus", purchased: false},
+	]; 
+	$scope.getList = function(){
+		return $scope.showList ? "ulGroceryList.html" : "olGroceryList.html"; 
+	}
+});
